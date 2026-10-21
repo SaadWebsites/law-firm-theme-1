@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" width="400" height="560" role="img" aria-labelledby="stTitle stDesc">
+  <title id="stTitle">Golden statue of Lady Justice</title>
+  <desc id="stDesc">A golden statue of Lady Justice holding a raised sword and balanced scales.</desc>
+
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6e3a4"/>
+      <stop offset="28%" stop-color="#e2c163"/>
+      <stop offset="55%" stop-color="#c9a227"/>
+      <stop offset="78%" stop-color="#8a6d15"/>
+      <stop offset="100%" stop-color="#d9bd6a"/>
+    </linearGradient>
+    <linearGradient id="goldSoft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e7c977"/>
+      <stop offset="50%" stop-color="#b8912a"/>
+      <stop offset="100%" stop-color="#7d6113"/>
+    </linearGradient>
+    <linearGradient id="goldEdge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fff3c9"/>
+      <stop offset="50%" stop-color="#d9bd6a"/>
+      <stop offset="100%" stop-color="#9a7a1c"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="rgba(236,208,122,0.42)"/>
+      <stop offset="60%" stop-color="rgba(201,162,39,0.10)"/>
+      <stop offset="100%" stop-color="rgba(201,162,39,0)"/>
+    </radialGradient>
+    <linearGradient id="blade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fff8dd"/>
+      <stop offset="45%" stop-color="#e7d08a"/>
+      <stop offset="100%" stop-color="#a07f1d"/>
+    </linearGradient>
+    <linearGradient id="glint" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
+      <stop offset="45%" stop-color="rgba(255,255,255,0.85)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <clipPath id="bladeClip"><path d="M133 28 L141 60 L141 148 L125 148 L125 60 Z"/></clipPath>
+  </defs>
+
+  <style>
+    @keyframes sway {
+      0%, 100% { transform: rotate(-4deg); }
+      50% { transform: rotate(4deg); }
+    }
+    @keyframes glintMove {
+      0%, 55% { transform: translateX(-120px); }
+      85%, 100% { transform: translateX(240px); }
+    }
+    @keyframes haloPulse {
+      0%, 100% { opacity: 0.75; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+    .scales { transform-origin: 300px 330px; animation: sway 5.5s ease-in-out infinite; }
+    .glint { animation: glintMove 4.5s ease-in-out infinite; }
+    .halo { transform-origin: 200px 240px; animation: haloPulse 5s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .scales, .glint, .halo { animation: none; }
+    }
+  </style>
+
+  <!-- halo -->
+  <ellipse class="halo" cx="200" cy="240" rx="185" ry="205" fill="url(#halo)"/>
+
+  <!-- sword blade (behind arm) -->
+  <g>
+    <path d="M133 28 L141 60 L141 148 L125 148 L125 60 Z" fill="url(#blade)"/>
+    <rect x="114" y="145" width="38" height="10" rx="4" fill="url(#gold)"/>
+    <rect x="128" y="155" width="10" height="22" rx="4" fill="url(#goldSoft)"/>
+    <circle cx="133" cy="179" r="9" fill="url(#gold)"/>
+    <g clip-path="url(#bladeClip)">
+      <rect class="glint" x="120" y="20" width="16" height="140" fill="url(#glint)" transform="skewX(-14)"/>
+    </g>
+  </g>
+
+  <!-- raised arm -->
+  <path d="M158 240 C136 220 126 196 133 172" fill="none" stroke="url(#gold)" stroke-width="21" stroke-linecap="round"/>
+  <circle cx="134" cy="166" r="12" fill="url(#gold)"/>
+
+  <!-- extended arm -->
+  <path d="M244 240 C266 240 282 246 294 254" fill="none" stroke="url(#gold)" stroke-width="21" stroke-linecap="round"/>
+  <circle cx="300" cy="258" r="12" fill="url(#gold)"/>
+
+  <!-- head -->
+  <circle cx="200" cy="168" r="31" fill="url(#gold)"/>
+  <!-- hair / veil -->
+  <path d="M169 162 C169 128 231 128 231 162 C231 150 222 141 200 141 C178 141 169 150 169 162 Z" fill="url(#goldSoft)"/>
+  <path d="M169 160 C165 186 170 200 178 206 L170 206 C160 192 160 168 169 160 Z" fill="url(#goldSoft)"/>
+  <path d="M231 160 C235 186 230 200 222 206 L230 206 C240 192 240 168 231 160 Z" fill="url(#goldSoft)"/>
+  <!-- blindfold -->
+  <path d="M169 158 C182 168 218 168 231 158 L231 173 C218 183 182 183 169 173 Z" fill="url(#goldEdge)"/>
+  <!-- neck -->
+  <rect x="190" y="193" width="20" height="20" rx="6" fill="url(#goldSoft)"/>
+
+  <!-- robe body -->
+  <path d="M200 210 C166 219 151 252 146 302 C139 362 129 420 121 470 L279 470 C271 420 261 362 254 302 C249 252 234 219 200 210 Z" fill="url(#goldSoft)"/>
+  <!-- robe folds -->
+  <g stroke="rgba(90,68,10,0.35)" stroke-width="2.4" fill="none" stroke-linecap="round">
+    <path d="M184 226 C176 290 168 380 160 466"/>
+    <path d="M216 226 C224 290 232 380 240 466"/>
+    <path d="M200 240 C198 300 198 380 200 466"/>
+    <path d="M156 330 C180 344 220 344 244 330"/>
+  </g>
+  <g stroke="rgba(255,240,190,0.30)" stroke-width="1.6" fill="none" stroke-linecap="round">
+    <path d="M190 232 C182 294 175 380 168 462"/>
+    <path d="M209 234 C216 296 222 380 229 462"/>
+  </g>
+  <!-- shoulder drape -->
+  <path d="M200 210 C182 214 168 226 160 246 C172 236 186 230 200 230 C214 230 228 236 240 246 C232 226 218 214 200 210 Z" fill="url(#gold)"/>
+
+  <!-- scales -->
+  <g class="scales">
+    <rect x="296" y="266" width="8" height="66" rx="3" fill="url(#gold)"/>
+    <circle cx="300" cy="264" r="7" fill="url(#goldEdge)"/>
+    <rect x="244" y="326" width="112" height="6" rx="3" fill="url(#goldEdge)"/>
+    <circle cx="300" cy="329" r="6" fill="url(#gold)"/>
+    <!-- left pan -->
+    <g stroke="url(#goldEdge)" stroke-width="2.2" fill="none" stroke-linecap="round">
+      <path d="M250 332 L250 352 M250 332 L240 352 M250 332 L260 352"/>
+    </g>
+    <path d="M231 352 Q250 376 269 352 Z" fill="url(#gold)"/>
+    <!-- right pan -->
+    <g stroke="url(#goldEdge)" stroke-width="2.2" fill="none" stroke-linecap="round">
+      <path d="M350 332 L350 352 M350 332 L340 352 M350 332 L360 352"/>
+    </g>
+    <path d="M331 352 Q350 376 369 352 Z" fill="url(#gold)"/>
+  </g>
+
+  <!-- pedestal -->
+  <ellipse cx="200" cy="522" rx="118" ry="14" fill="rgba(201,162,39,0.16)"/>
+  <rect x="118" y="468" width="164" height="15" rx="3" fill="url(#gold)"/>
+  <rect x="132" y="483" width="136" height="13" rx="3" fill="url(#goldSoft)"/>
+  <rect x="108" y="496" width="184" height="20" rx="4" fill="url(#gold)"/>
+  <rect x="150" y="516" width="100" height="6" rx="3" fill="rgba(255,240,190,0.25)"/>
+</svg>
